@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waves_crypto_app/src/modules/dashboard/screens/dashboard_view.dart';
-import 'package:waves_crypto_app/src/modules/dashboard/screens/home_screen.dart';
+import 'package:waves_crypto_app/src/modules/onboarding/screens/splash_screen.dart';
 import 'package:waves_crypto_app/src/shared/styles/theme.dart';
 
 class MyApp extends StatelessWidget {
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
           title: 'Template',
           debugShowCheckedModeBanner: false,
           theme: AppTheme.theme,
-          home: const DashboardView(),
+          home: const SplashScreen(),
         );
       },
     );

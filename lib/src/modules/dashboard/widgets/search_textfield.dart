@@ -24,18 +24,21 @@ class _SearchWidgetState extends State<SearchWidget> {
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
-      style: Theme.of(context).textTheme.bodyText1,
+      style: AppText.bold600(context).copyWith(
+        fontSize: 14.sp,
+      ),
       onChanged: widget.onChanged,
       decoration: InputDecoration(
         filled: true,
+        isDense: true,
         fillColor: const Color(0xffeef0f3),
         hintText: 'Search ',
-        hintStyle: AppText.bold400(context).copyWith(
+        hintStyle: AppText.bold600(context).copyWith(
           color: AppColors.grey,
           fontSize: 14.sp,
         ),
         contentPadding: EdgeInsets.symmetric(
-          vertical: 9.h,
+          vertical: 0,
           horizontal: 11.5.w,
         ),
         prefixIcon: Icon(

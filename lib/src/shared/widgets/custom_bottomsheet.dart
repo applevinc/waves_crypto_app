@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waves_crypto_app/src/shared/styles/colors.dart';
@@ -22,10 +20,7 @@ Future<dynamic> showCustomBottomSheet({
     ),
     isDismissible: isDismissible,
     backgroundColor: Colors.transparent,
-    builder: (context) => BackdropFilter(
-      filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-      child: body,
-    ),
+    builder: (context) => body,
   );
 }
 
@@ -34,43 +29,34 @@ class CustomBottomSheetBody extends StatelessWidget {
     Key? key,
     required this.content,
     this.padding,
+    this.backgroundColor,
   }) : super(key: key);
 
   final List<Widget> content;
   final EdgeInsetsGeometry? padding;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        margin: EdgeInsets.only(
-          top: 80.h,
-          // left: 10.w,
-          // right: 10.w,
-        ),
-        padding: padding ??
-            EdgeInsets.only(
-              top: 8.h,
-              right: AppPadding.horizontal,
-              left: AppPadding.horizontal,
-              bottom: MediaQuery.of(context).padding.bottom,
-            ),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(10.r),
-            topRight: Radius.circular(10.r),
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      padding: padding ??
+          EdgeInsets.only(
+            top: 8.h,
+            right: AppPadding.horizontal,
+            left: AppPadding.horizontal,
+            bottom: MediaQuery.of(context).padding.bottom,
           ),
+      decoration: BoxDecoration(
+        color: backgroundColor ?? Colors.white,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(10.r),
+          topRight: Radius.circular(10.r),
         ),
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          padding: MediaQuery.of(context).viewInsets,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: content,
-          ),
-        ),
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: content,
       ),
     );
   }
@@ -110,14 +96,16 @@ class BottomSheetCloseButton extends StatelessWidget {
 }
 
 class Dragger extends StatelessWidget {
-  const Dragger({Key? key}) : super(key: key);
+  const Dragger({Key? key, this.color}) : super(key: key);
+
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 50.w,
+      width: 45.w,
       height: 4.h,
-      color: AppColors.grey,
+      color: color ?? AppColors.grey,
     );
   }
 }

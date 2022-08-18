@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waves_crypto_app/src/modules/dashboard/screens/home_screen.dart';
+import 'package:waves_crypto_app/src/modules/dashboard/screens/bottosheets/transaction_options_bottomsheet.dart';
+import 'package:waves_crypto_app/src/modules/dashboard/widgets/navbar_button.dart';
 import 'package:waves_crypto_app/src/shared/styles/colors.dart';
 import 'package:waves_crypto_app/src/shared/styles/text.dart';
-import 'package:waves_crypto_app/src/shared/widgets/custom_bottomsheet.dart';
 
 class DashboardView extends StatefulWidget {
   const DashboardView({Key? key}) : super(key: key);
@@ -65,7 +66,11 @@ class _DashboardViewState extends State<DashboardView> {
             label: 'Authorizations',
           ),
           BottomNavigationBarItem(
-            icon: _plusButton(),
+            icon: NavBarButton(
+              icon: Icons.add,
+              iconColor: AppColors.primary,
+              backgroundColor: AppColors.primary.withOpacity(.3),
+            ),
             label: 'Authorizations',
           ),
           const BottomNavigationBarItem(
@@ -79,43 +84,6 @@ class _DashboardViewState extends State<DashboardView> {
           ),
         ],
       ),
-    );
-  }
-
-  Widget _plusButton() {
-    return Container(
-      height: 20.h,
-      width: 20.h,
-      decoration: BoxDecoration(
-        color: AppColors.primary.withOpacity(.3),
-        borderRadius: BorderRadius.circular(5.r),
-      ),
-      child: Icon(
-        Icons.add,
-        color: AppColors.primary,
-        size: 15.sp,
-      ),
-    );
-  }
-}
-
-Future<dynamic> transactionBottomSheet(BuildContext context) {
-  return showCustomBottomSheet(
-    context: context,
-    body: const _Body(),
-  );
-}
-
-class _Body extends StatelessWidget {
-  const _Body({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return CustomBottomSheetBody(
-      content: [
-        const Dragger(),
-        SizedBox(height: 16.h),
-      ],
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waves_crypto_app/src/modules/dashboard/screens/bottosheets/my_address_bottomsheet.dart';
 import 'package:waves_crypto_app/src/modules/dashboard/widgets/available_balance_card.dart';
 import 'package:waves_crypto_app/src/modules/dashboard/widgets/balance_switch.dart';
 import 'package:waves_crypto_app/src/modules/dashboard/widgets/home_card.dart';
@@ -11,9 +12,6 @@ import 'package:waves_crypto_app/src/shared/styles/text.dart';
 import 'package:waves_crypto_app/src/shared/widgets/appbars/custom_appbar.dart';
 import 'package:waves_crypto_app/src/shared/widgets/appbars/custom_tabbar.dart';
 import 'package:waves_crypto_app/src/shared/widgets/appbars/sliver_appbar_delegate.dart';
-import 'package:waves_crypto_app/src/shared/widgets/buttons/app_button.dart';
-import 'package:waves_crypto_app/src/shared/widgets/custom_divider.dart';
-import 'package:waves_crypto_app/src/shared/widgets/custom_linear_progress_indicator.dart';
 import 'package:waves_crypto_app/src/shared/widgets/tiles/custom_expansion_tile.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -24,7 +22,7 @@ class HomeScreen extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        backgroundColor: const Color(0xfffafafa),
+        backgroundColor: const Color(0xffF8FAFB),
         appBar: CustomAppBar(
           leading: IconButton(
             icon: Icon(
@@ -95,7 +93,7 @@ class HomeScreen extends StatelessWidget {
           body: const TabBarView(
             physics: BouncingScrollPhysics(),
             children: [
-              TokensTabView(),
+              _TokensTabView(),
               _LeasingTabView(),
             ],
           ),
@@ -127,6 +125,9 @@ class _CardsSection extends StatelessWidget {
                 icon: icon(Icons.qr_code, color: Colors.white),
                 label: 'Your address',
                 backgroundColor: Colors.blue,
+                onTap: () {
+                  myAddressBottomSheet(context);
+                },
               ),
               HomeCard(
                 icon: icon(Icons.person_outlined),
@@ -164,7 +165,7 @@ class _TabsSection extends StatelessWidget {
         minHeight: 25.h,
         maxHeight: 25.h,
         child: Container(
-          color: Colors.white,
+          color: const Color(0xffF8FAFB),
           child: const CustomTabBar(
             isScrollable: true,
             tabs: [
@@ -178,8 +179,8 @@ class _TabsSection extends StatelessWidget {
   }
 }
 
-class TokensTabView extends StatelessWidget {
-  const TokensTabView({Key? key}) : super(key: key);
+class _TokensTabView extends StatelessWidget {
+  const _TokensTabView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -258,7 +259,32 @@ class _LeasingTabView extends StatelessWidget {
       child: Column(
         children: [
           const AvailableBalanCard(),
-          
+          SizedBox(height: 8.h),
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              boxShadow: AppColors.boxshadow,
+              borderRadius: BorderRadius.circular(5.r),
+            ),
+            padding: EdgeInsets.symmetric(
+              horizontal: AppPadding.horizontal,
+              vertical: 15.h,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'View History',
+                  style: AppText.bold600(context),
+                ),
+                Icon(
+                  Icons.chevron_right,
+                  size: 20.sp,
+                  color: AppColors.grey,
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );

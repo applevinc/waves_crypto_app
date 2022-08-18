@@ -13,15 +13,9 @@ class AppColors {
   static final boxshadow = [
     BoxShadow(
       color: Colors.black.withOpacity(0.15),
-      spreadRadius: 2,
+      spreadRadius: 0,
       blurRadius: 6,
       offset: const Offset(0, 2),
-    ),
-    BoxShadow(
-      color: Colors.black.withOpacity(0.3),
-      spreadRadius: 0,
-      blurRadius: 2,
-      offset: const Offset(0, 1),
     ),
   ];
   static const gradient = LinearGradient(

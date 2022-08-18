@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:waves_crypto_app/src/modules/dashboard/screens/bottosheets/start_leasing_bottomsheet.dart';
 import 'package:waves_crypto_app/src/shared/styles/colors.dart';
 import 'package:waves_crypto_app/src/shared/styles/spacing.dart';
 import 'package:waves_crypto_app/src/shared/styles/text.dart';
@@ -61,7 +62,9 @@ class AvailableBalanCard extends StatelessWidget {
             label: 'Start Lease',
             labelColor: AppColors.primary,
             backgroundColor: AppColors.primary.withOpacity(.15),
-            onTap: () {},
+            onTap: () {
+              startLeasingBottomSheet(context);
+            },
           ),
         ],
       ),

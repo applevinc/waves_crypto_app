@@ -25,7 +25,7 @@ class AppButton extends StatelessWidget {
   final bool isLoading;
   final Widget? child;
   final double elevation;
-  final String? icon;
+  final IconData? icon;
   final BorderSide? border;
   final EdgeInsetsGeometry? padding;
 
@@ -58,18 +58,18 @@ class AppButton extends StatelessWidget {
                 ? Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      Icon(
+                        icon,
+                        color: labelColor,
+                        size: 15.sp,
+                      ),
+                      SizedBox(width: 8.w),
                       Text(
                         label,
                         style: AppText.bold600(context).copyWith(
                           color: labelColor ?? Colors.white,
                           fontSize: 12.sp,
                         ),
-                      ),
-                      SizedBox(width: 8.w),
-                      Icon(
-                        Icons.arrow_forward,
-                        color: labelColor,
-                        size: 15.sp,
                       ),
                     ],
                   )
