@@ -7,7 +7,7 @@ class AppTheme {
 
   static ThemeData get theme {
     return ThemeData(
-      colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
+      colorScheme: ColorScheme.fromSeed(seedColor: AppColors.blue),
       textTheme: GoogleFonts.poppinsTextTheme().apply(
         displayColor: AppColors.textDefault,
         bodyColor: AppColors.textDefault,

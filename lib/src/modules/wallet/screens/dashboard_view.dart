@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waves_crypto_app/src/modules/dashboard/screens/home_screen.dart';
-import 'package:waves_crypto_app/src/modules/dashboard/screens/bottosheets/transaction_options_bottomsheet.dart';
-import 'package:waves_crypto_app/src/modules/dashboard/widgets/navbar_button.dart';
+import 'package:waves_crypto_app/src/modules/wallet/screens/wallet_screen.dart';
+import 'package:waves_crypto_app/src/modules/wallet/screens/bottosheets/transaction_options_bottomsheet.dart';
+import 'package:waves_crypto_app/src/modules/wallet/widgets/navbar_button.dart';
 import 'package:waves_crypto_app/src/shared/styles/colors.dart';
 import 'package:waves_crypto_app/src/shared/styles/text.dart';
 
@@ -17,11 +17,11 @@ class _DashboardViewState extends State<DashboardView> {
   int _selectedIndex = 0;
 
   static const List<Widget> _screens = <Widget>[
-    HomeScreen(),
-    HomeScreen(),
-    HomeScreen(),
-    HomeScreen(),
-    HomeScreen(),
+    WalletScreen(),
+    WalletScreen(),
+    WalletScreen(),
+    WalletScreen(),
+    WalletScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -68,8 +68,8 @@ class _DashboardViewState extends State<DashboardView> {
           BottomNavigationBarItem(
             icon: NavBarButton(
               icon: Icons.add,
-              iconColor: AppColors.primary,
-              backgroundColor: AppColors.primary.withOpacity(.3),
+              iconColor: AppColors.blue,
+              backgroundColor: AppColors.blue.withOpacity(.3),
             ),
             label: 'Authorizations',
           ),

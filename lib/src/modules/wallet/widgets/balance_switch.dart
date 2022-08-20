@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:waves_crypto_app/src/modules/dashboard/widgets/home_card.dart';
+import 'package:waves_crypto_app/src/modules/wallet/widgets/wallet_card.dart';
 import 'package:waves_crypto_app/src/shared/widgets/custom_switch.dart';
 
 class BalanceSwitch extends StatefulWidget {
@@ -22,7 +22,7 @@ class _BalanceSwitchState extends State<BalanceSwitch> {
 
   @override
   Widget build(BuildContext context) {
-    return HomeCard(
+    return WalletCard(
       icon: CustomSwitch(
         value: _showBalance,
         onToggle: _onToggle,

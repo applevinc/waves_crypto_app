@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.waves_crypto_app">
    <application
-        android:label="waves_crypto_app"
+        android:label="Waves"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

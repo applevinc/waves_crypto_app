@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class AppColors {
   AppColors._();
 
-  static const primary = Colors.blue;
+  static const blue = Colors.blue;
   static const textDefault = Color(0xff061725);
   static Color grey = textDefault.withOpacity(.3);
   static const backgroundColor = Color(0xffF8FDFF);
   static const error = Color(0xffEF1313);
-  static final border = AppColors.primary.withOpacity(.6);
+  static final border = AppColors.blue.withOpacity(.6);
 
   static final boxshadow = [
     BoxShadow(

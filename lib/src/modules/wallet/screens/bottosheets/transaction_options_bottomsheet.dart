@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waves_crypto_app/src/modules/dashboard/widgets/navbar_button.dart';
+import 'package:waves_crypto_app/src/modules/wallet/widgets/navbar_button.dart';
 import 'package:waves_crypto_app/src/shared/styles/colors.dart';
 import 'package:waves_crypto_app/src/shared/styles/text.dart';
 import 'package:waves_crypto_app/src/shared/widgets/custom_bottomsheet.dart';

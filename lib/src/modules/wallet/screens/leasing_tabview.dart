@@ -1,12 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waves_crypto_app/src/modules/dashboard/screens/bottosheets/start_leasing_bottomsheet.dart';
+import 'package:waves_crypto_app/src/modules/wallet/screens/bottosheets/start_leasing_bottomsheet.dart';
 import 'package:waves_crypto_app/src/shared/styles/colors.dart';
 import 'package:waves_crypto_app/src/shared/styles/spacing.dart';
 import 'package:waves_crypto_app/src/shared/styles/text.dart';
 import 'package:waves_crypto_app/src/shared/widgets/buttons/app_button.dart';
 import 'package:waves_crypto_app/src/shared/widgets/custom_divider.dart';
 import 'package:waves_crypto_app/src/shared/widgets/custom_linear_progress_indicator.dart';
+
+class LeasingTabView extends StatelessWidget {
+  const LeasingTabView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
+      padding: EdgeInsets.symmetric(
+        vertical: 16.h,
+        horizontal: AppPadding.horizontal,
+      ),
+      child: Column(
+        children: [
+          const AvailableBalanCard(),
+          SizedBox(height: 8.h),
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              boxShadow: AppColors.boxshadow,
+              borderRadius: BorderRadius.circular(5.r),
+            ),
+            padding: EdgeInsets.symmetric(
+              horizontal: AppPadding.horizontal,
+              vertical: 15.h,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'View History',
+                  style: AppText.bold600(context),
+                ),
+                Icon(
+                  Icons.chevron_right,
+                  size: 20.sp,
+                  color: AppColors.grey,
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
 
 class AvailableBalanCard extends StatelessWidget {
   const AvailableBalanCard({
@@ -47,7 +93,7 @@ class AvailableBalanCard extends StatelessWidget {
             context,
             value: '1 435.000355601',
             trailingLabel: 'Leased',
-            dotColor: AppColors.primary,
+            dotColor: AppColors.blue,
           ),
           const CustomDivider(),
           tile(
@@ -60,8 +106,8 @@ class AvailableBalanCard extends StatelessWidget {
           SizedBox(height: 24.h),
           AppButton(
             label: 'Start Lease',
-            labelColor: AppColors.primary,
-            backgroundColor: AppColors.primary.withOpacity(.15),
+            labelColor: AppColors.blue,
+            backgroundColor: AppColors.blue.withOpacity(.15),
             onTap: () {
               startLeasingBottomSheet(context);
             },

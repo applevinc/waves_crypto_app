@@ -3,16 +3,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:waves_crypto_app/src/shared/styles/colors.dart';
 import 'package:waves_crypto_app/src/shared/styles/text.dart';
 
-class HomeCard extends StatelessWidget {
-  const HomeCard({
+class WalletCard extends StatelessWidget {
+  const WalletCard({
     Key? key,
     required this.label,
+    this.labelColor,
     required this.icon,
     this.backgroundColor,
     this.onTap,
   }) : super(key: key);
 
   final String label;
+  final Color? labelColor;
   final Widget icon;
   final Color? backgroundColor;
   final Function()? onTap;
@@ -38,8 +40,8 @@ class HomeCard extends StatelessWidget {
             Text(
               label,
               style: AppText.bold500(context).copyWith(
-                fontSize: 12.sp,
-                color: AppColors.grey,
+                fontSize: 10.sp,
+                color: labelColor ?? AppColors.grey,
               ),
             ),
           ],

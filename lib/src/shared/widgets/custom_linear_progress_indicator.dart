@@ -20,8 +20,8 @@ class CustomLinearProgressIndicator extends StatelessWidget {
       borderRadius: BorderRadius.all(Radius.circular(10.r)),
       child: LinearProgressIndicator(
         value: 0.8,
-        valueColor: AlwaysStoppedAnimation<Color>(valueColor ?? AppColors.primary),
-        backgroundColor: backgroundColor ?? AppColors.primary.withOpacity(.1),
+        valueColor: AlwaysStoppedAnimation<Color>(valueColor ?? AppColors.blue),
+        backgroundColor: backgroundColor ?? AppColors.blue.withOpacity(.1),
         minHeight: height ?? 8.h,
       ),
     );

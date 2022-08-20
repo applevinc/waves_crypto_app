@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waves_crypto_app/src/modules/dashboard/widgets/action_button.dart';
+import 'package:waves_crypto_app/src/modules/wallet/widgets/action_button.dart';
 import 'package:waves_crypto_app/src/shared/assets/images.dart';
 import 'package:waves_crypto_app/src/shared/styles/colors.dart';
 import 'package:waves_crypto_app/src/shared/styles/text.dart';
@@ -19,7 +19,7 @@ class _Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomBottomSheetBody(
-      backgroundColor: AppColors.primary,
+      backgroundColor: AppColors.blue,
       content: [
         Dragger(color: Colors.white.withOpacity(.5)),
         SizedBox(height: 60.h),

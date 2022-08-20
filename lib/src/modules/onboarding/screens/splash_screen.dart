@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waves_crypto_app/src/modules/dashboard/screens/dashboard_view.dart';
+import 'package:waves_crypto_app/src/modules/wallet/screens/dashboard_view.dart';
 import 'package:waves_crypto_app/src/shared/assets/images.dart';
 import 'package:waves_crypto_app/src/shared/utils/navigator.dart';
 

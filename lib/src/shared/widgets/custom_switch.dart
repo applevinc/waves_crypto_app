@@ -18,7 +18,7 @@ class CustomSwitch extends StatelessWidget {
       alignment: Alignment.topLeft,
       child: CupertinoSwitch(
         value: value,
-        activeColor: AppColors.primary,
+        activeColor: AppColors.blue,
         onChanged: onToggle,
       ),
     );

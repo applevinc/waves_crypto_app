@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:waves_crypto_app/src/modules/dashboard/widgets/action_button.dart';
+import 'package:waves_crypto_app/src/modules/wallet/widgets/action_button.dart';
 import 'package:waves_crypto_app/src/shared/styles/colors.dart';
 import 'package:waves_crypto_app/src/shared/styles/spacing.dart';
 import 'package:waves_crypto_app/src/shared/styles/text.dart';
@@ -34,7 +34,7 @@ class _Body extends StatelessWidget {
         SizedBox(height: 20.h),
         const _Actions(),
         SizedBox(height: 60.h),
-        downButton(),
+        const _DownButton(),
         SizedBox(height: 40.h),
       ],
     );
@@ -120,7 +120,7 @@ class _BalanceSection extends StatelessWidget {
   Widget tag(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.primary.withOpacity(.1),
+        color: AppColors.blue.withOpacity(.1),
         borderRadius: BorderRadius.circular(5.r),
       ),
       padding: EdgeInsets.symmetric(vertical: 2.h, horizontal: 4.w),
@@ -128,7 +128,7 @@ class _BalanceSection extends StatelessWidget {
         'Waves',
         style: AppText.bold500(context).copyWith(
           fontSize: 9.sp,
-          color: AppColors.primary,
+          color: AppColors.blue,
         ),
       ),
     );
@@ -247,7 +247,7 @@ class _LeaseInformationSection extends StatelessWidget {
               _RoundedRectangleBadge(
                 label: 'Waves',
                 labelSize: 9.sp,
-                color: AppColors.primary,
+                color: AppColors.blue,
               ),
             ],
           ),
@@ -351,6 +351,36 @@ class _RoundedRectangleBadge extends StatelessWidget {
         style: AppText.bold500(context).copyWith(
           fontSize: labelSize,
           color: color,
+        ),
+      ),
+    );
+  }
+}
+
+class _DownButton extends StatelessWidget {
+  const _DownButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Navigator.pop(context);
+      },
+      child: Align(
+        alignment: Alignment.centerRight,
+        child: Container(
+          height: 41.h,
+          width: 41.h,
+          margin: AppPadding.symetricHorizontalOnly,
+          decoration: BoxDecoration(
+            color: AppColors.grey.withOpacity(.1),
+            shape: BoxShape.circle,
+          ),
+          child: Icon(
+            Icons.arrow_downward,
+            color: AppColors.textDefault,
+            size: 15.sp,
+          ),
         ),
       ),
     );

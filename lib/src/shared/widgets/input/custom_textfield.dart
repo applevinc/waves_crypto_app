@@ -211,7 +211,7 @@ class TextFieldIcon extends StatelessWidget {
         child: Icon(
           icon,
           size: size ?? 20.sp,
-          color: color ?? AppColors.primary,
+          color: color ?? AppColors.blue,
         ),
       ),
     );
